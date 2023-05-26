@@ -8,6 +8,10 @@ import {
 const app = express();
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
 const setup = async () => {
     try {
         const db = await connectToDatabase();

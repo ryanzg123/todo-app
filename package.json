@@ -10,7 +10,7 @@
   "scripts": {
     "setup": "rm -f todo.db && sqlite3 todo.db < setup.sql",
     "build": "rm -rf out && mkdir out && tsc",
-    "start": "cd out && node index.js",
+    "start": "cd out && cd routes && node index.js",
     "watch": "yarn run out && tsc-watch --onSuccess \"yarn run start\""
   },
   "type": "module",
