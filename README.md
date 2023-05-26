@@ -1,4 +1,6 @@
 # todo-app
 v1.0.0
 a simple todo app
-utilizing React for frontend and NodeJs for backend
+frontend: React
+backend: NodeJs
+database: sqlite3
