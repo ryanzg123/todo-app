@@ -4,9 +4,11 @@ import {
     connectToDatabase,
     closeDatabase
 } from '../db/connectDb.js';
+import cors from 'cors';
 
 const app = express();
 app.use(express.json());
+app.use(cors({ origin: 'http://localhost:3000'}))
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
@@ -15,10 +17,10 @@ app.get('/', (req, res) => {
 const setup = async () => {
     try {
         const db = await connectToDatabase();
-        app.use('/todos', todosRouter(db));
+        app.use('/api/todos', todosRouter(db));
 
         // Start the server
-        const port = 3000;
+        const port = 3001;
         app.listen(port, () => {
             console.log(`Server is running on port ${port}`);
         });

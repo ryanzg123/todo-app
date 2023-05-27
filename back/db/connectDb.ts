@@ -7,10 +7,10 @@ let db: Database;
 const connectToDatabase = async (retries: number = 5): Promise<Database> => {
     try {
         db = await open({
-            filename: '../../todo.db',
+            filename: '../../todos.db',
             driver: sqlite3.Database
         });
-        await db.get('PRAGMA foreign_keys = ON');
+        // await db.get('PRAGMA foreign_keys = ON'); // Disable foreign key checks for now
         console.log('Connected to the SQLite database.');
 
         return db;

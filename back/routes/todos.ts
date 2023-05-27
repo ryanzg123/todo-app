@@ -26,6 +26,7 @@ const todosRouter = (db: Database) => {
         try {
             // Extract the new todo data from the request body
             const newTodo: Todo = req.body;
+            console.log(`Adding new todo: ${JSON.stringify(newTodo)}`);
 
             // Add the new todo to the database
             const addedTodo = await todosDb(db).add(newTodo);

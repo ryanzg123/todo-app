@@ -6,9 +6,8 @@ interface Todo {
     user_id: number;
     title: string;
     description?: string;
-    is_completed: boolean;
     priority: priority;
-    notes?: string;
+    is_completed: boolean;
     is_starred: boolean;
 }
 
